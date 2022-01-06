@@ -6,7 +6,7 @@ include_once('define_cargo.php');
 //teste
 $usuario = $_SESSION['usuario'];
 $cargo = $_SESSION['nivel'];
-
+// admin é falso
 $admin = false;
 
 if ($cargo == "Admin"){
