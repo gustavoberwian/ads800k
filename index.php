@@ -100,7 +100,7 @@ if ($cargo == "Admin"){
         include("./pages/advs/adv.php");
     }
 
-    else if($value == 'adv' || $value == 'alterar_subdomain' || $value == 'duplicar' || $value == 'novo_dominio' || $value == 'substituir_adv' || $value == 'trocar_pre' ){
+    else if($value == 'adv' || $value == 'alterar_subdomain' || $value == 'duplicar' || $value == 'novo_dominio' || $value == 'alterar_subdomain' || $value == 'trocar_pre' ){
         include ("./pages/advs/$value.php");
     }
 

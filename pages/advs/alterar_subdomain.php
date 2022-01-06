@@ -150,15 +150,18 @@
 <div class="container">
     <div class="title">Alteração de Sub-Pasta</div>
     <div class="content">
-        <form action="alterar_subdomain/altera.php" method="post">
+        <form action="alterar_subdomain/altera_sub.php" method="post">
             <div class="user-details">
                 <div  class="input-box">
                     <span class="details">Endereço da Pasta</span>
-                    <input type="text" placeholder="/var/www" required />
+                    <div style="display: flex">
+                        <label for="dominio">Domínio: </label><input type="text" placeholder="dominio.com" name="dominio" id="dominio" required />
+                        <label for="subdominio">Subdomínio: </label><input type="text" placeholder="materia-abs" name="subdominio" id="subdominio" required />
+                    </div>
                 </div>
                 <div  class="input-box">
-                    <span class="details">Novo nome para Sub-Pasta</span>
-                    <input type="text" placeholder="Vida-Saudavel" required />
+                    <span class="details"><label for="novo_subdominio">Novo nome para Sub-Pasta</label></span>
+                    <input type="text" placeholder="saude-news" name="novo_subdominio" id="novo_subdominio" required />
                 </div>
 
             </div>
@@ -168,5 +171,18 @@
             </div>
         </form>
     </div>
+
+    <?php if(isset($_SESSION['subdominio_alterado'])){ ?>
+        <div class="title">Sub domínio alterado com sucesso!</div>
+    <?php } ?>
+
+    <?php if(isset($_SESSION['subdominio_nao_alterado'])){ ?>
+        <div class="title">Sub domínio não alterado, tente novamente ou contate seu dev</div>
+    <?php } ?>
+
+    <?php
+        unset($_SESSION['subdominio_alterado']);
+        unset($_SESSION['subdominio_nao_alterado']);
+    ?>
 </div>
   

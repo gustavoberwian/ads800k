@@ -237,8 +237,14 @@
 </style>
 
 <?php
+include_once('./login/verifica_login.php');
+include_once('./config.php');
 include_once('define_cargo.php');
 
+if ($_SESSION['nivel'] == 'Teste' || $_SESSION['nivel'] == 'Usuário'){
+    echo "<p style='color: red; background-color: black;'>Usuáio sem permissão</p>";
+}
+else{
 
 ?>
 
@@ -299,3 +305,4 @@ include_once('define_cargo.php');
     }, 4700);
 </script>
 <script src="./pages/Admin/cad.js"></script>
+<?php }

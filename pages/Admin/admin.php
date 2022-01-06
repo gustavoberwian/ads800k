@@ -151,6 +151,15 @@
 </div>
 <?php
 
+include_once('./login/verifica_login.php');
+include_once('./config.php');
+include_once('define_cargo.php');
+
+if ($_SESSION['nivel'] == 'Teste' || $_SESSION['nivel'] == 'Usuário'){
+    echo "<p style='color: red; background-color: black;'>Usuáio sem permissão</p>";
+}
+else{
+
 $consulta_usuarios = "SELECT * FROM usuario";
 $con = $conexao->query($consulta_usuarios) or die($conexao->error);
 
@@ -208,3 +217,5 @@ $con = $conexao->query($consulta_usuarios) or die($conexao->error);
         </div>
     </div>
 </div>
+<?php
+}
